@@ -1,4 +1,12 @@
 activate :dotenv
+
+activate :contentful do |f|
+  f.access_token = ENV['CONTENTFUL_ACCESS_TOKEN']
+  f.space = { links: "3fwy09k2gc9g" }
+  f.content_types = { link: "post" }
+  f.cda_query = { content_type: "post" }
+end
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
